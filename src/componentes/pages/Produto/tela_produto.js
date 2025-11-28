@@ -170,7 +170,7 @@ export default function TelaProduto() {
     const buscarProduto = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/produtos/getProdutoPorId/${id_produto}`
+          `http://pbegalpaodobem.vercel.app/produtos/getProdutoPorId/${id_produto}`
         );
         if (!response.ok) {
           throw new Error("Produto não encontrado.");

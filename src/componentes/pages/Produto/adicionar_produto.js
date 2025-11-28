@@ -139,7 +139,6 @@ const BotãoVoltar = styled.div`
 // --- FUNÇÃO AUXILIAR DE CONVERSÃO DE ARQUIVO PARA BASE64 ---
 //Converte um objeto File (Imagem/PDF) em uma string Base64 Data URL
 const converterParaBase64 = (arquivo) => {
-  
   return new Promise((resolver, rejeitar) => {
     const leitor = new FileReader();
     leitor.readAsDataURL(arquivo);
@@ -166,7 +165,7 @@ export default function AdicionarProduto() {
     const buscarCategorias = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3000/categorias/getCategorias"
+          "http://pbegalpaodobem.vercel.app/categorias/getCategorias"
         );
         if (!response.ok) {
           throw new Error("Falha ao carregar categorias.");
@@ -194,7 +193,7 @@ export default function AdicionarProduto() {
       const imagemBase64 = await converterParaBase64(imagem_produto);
 
       const resposta = await fetch(
-        "http://localhost:3000/produtos/adicionarProduto",
+        "http://pbegalpaodobem.vercel.app/produtos/adicionarProduto",
         {
           method: "POST",
           headers: {

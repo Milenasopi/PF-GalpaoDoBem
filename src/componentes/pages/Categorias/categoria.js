@@ -154,7 +154,7 @@ export default function Categoria() {
         const buscarNomeDaCategoria = async () => {
         try {
             const response = await fetch(
-                `http://localhost:3000/categorias/getCategoriaPorId/${id_categoria}` 
+                `http://pbegalpaodobem.vercel.app/categorias/getCategoriaPorId/${id_categoria}` 
             );
 
             if (!response.ok) {
@@ -175,7 +175,7 @@ export default function Categoria() {
         const buscarProdutosDaCategoria = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:3000/produtos/getProdutoPorCategoria/${id_categoria}`
+                    `http://pbegalpaodobem.vercel.app/produtos/getProdutoPorCategoria/${id_categoria}`
                 );
                 
                 if (!response.ok) {
