@@ -159,17 +159,14 @@ const Instagram2 = styled.div`
   gap: 10px;
   justify-content: center;
 
-   @media (max-width: 640px) {
-    margin-left:12%;
+  @media (max-width: 640px) {
+    margin-left: 12%;
   }
-  
 `;
 const FacebookIcon = styled.div`
-  
-   @media (max-width: 640px) {
-    margin-left:12%;
+  @media (max-width: 640px) {
+    margin-left: 12%;
   }
-  
 `;
 
 const IconsHeater = styled.img`
@@ -213,7 +210,7 @@ export default function Home() {
     const buscarProdutoRecente = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/produtos/getProdutosRecentes`
+          `http://pbegalpaodobem.vercel.app/produtos/getProdutosRecentes`
         );
         if (!response.ok) {
           throw new Error("Produto não encontrado.");
@@ -511,7 +508,7 @@ export default function Home() {
                   {/* Instagram */}
                   <Link
                     to={`https://www.instagram.com/galpaodobem?igsh=a3Y1ZGNycjRid2F1`}
-                    style={{ textDecoration: "none"}}
+                    style={{ textDecoration: "none" }}
                   >
                     <Instagram2
                       style={{
@@ -521,7 +518,6 @@ export default function Home() {
                         gap: "10px",
                         marginBottom: "10px",
                         color: "white",
-                        
                       }}
                     >
                       <a
