@@ -210,7 +210,7 @@ export default function Home() {
     const buscarProdutoRecente = async () => {
       try {
         const response = await fetch(
-          `http://pbegalpaodobem.vercel.app/produtos/getProdutosRecentes`
+          `https://pbegalpaodobem.vercel.app/produtos/getProdutosRecentes`
         );
         if (!response.ok) {
           throw new Error("Produto não encontrado.");
