@@ -165,7 +165,7 @@ export default function AdicionarProduto() {
     const buscarCategorias = async () => {
       try {
         const response = await fetch(
-          "http://pbegalpaodobem.vercel.app/categorias/getCategorias"
+          "https://pbegalpaodobem.vercel.app/categorias/getCategorias"
         );
         if (!response.ok) {
           throw new Error("Falha ao carregar categorias.");
@@ -193,7 +193,7 @@ export default function AdicionarProduto() {
       const imagemBase64 = await converterParaBase64(imagem_produto);
 
       const resposta = await fetch(
-        "http://pbegalpaodobem.vercel.app/produtos/adicionarProduto",
+        "https://pbegalpaodobem.vercel.app/produtos/adicionarProduto",
         {
           method: "POST",
           headers: {

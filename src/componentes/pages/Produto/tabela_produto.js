@@ -120,7 +120,7 @@ export default function TabelaProduto() {
     const buscarProdutoEprioridade = async () => {
       try {
         const responseProduto = await fetch(
-          `http://pbegalpaodobem.vercel.app/produtos/getProdutoPorId/${id_produto}`
+          `https://pbegalpaodobem.vercel.app/produtos/getProdutoPorId/${id_produto}`
         );
         if (!responseProduto.ok) {
           throw new Error("Produto não encontrado.");
@@ -129,7 +129,7 @@ export default function TabelaProduto() {
         setProduto(dataProduto);
 
         const responseprioridade = await fetch(
-          `http://pbegalpaodobem.vercel.app/prioridade/getPrioridadePorID/${id_produto}`
+          `https://pbegalpaodobem.vercel.app/prioridade/getPrioridadePorID/${id_produto}`
         );
 
         if (!responseprioridade.ok) {

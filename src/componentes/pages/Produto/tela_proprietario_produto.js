@@ -348,7 +348,7 @@ export default function ProdutoProprietario() {
         }
         try {
           const response = await fetch(
-            `http://pbegalpaodobem.vercel.app/produtos/buscar/?q=${query}`
+            `https://pbegalpaodobem.vercel.app/produtos/buscar/?q=${query}`
           );
           if (!response.ok) {
             throw new Error("Erro ao buscar sugestões.");
@@ -374,7 +374,7 @@ export default function ProdutoProprietario() {
       if (query.trim()) {
         try {
           const response = await fetch(
-            `http://pbegalpaodobem.vercel.app/produtos/buscar/?q=${query}`
+            `https://pbegalpaodobem.vercel.app/produtos/buscar/?q=${query}`
           );
           if (!response.ok) {
             throw new Error("Produto não encontrado.");
@@ -404,7 +404,7 @@ export default function ProdutoProprietario() {
   const buscarProdutosDoProprietario = async () => {
     try {
       const response = await fetch(
-        `http://pbegalpaodobem.vercel.app/produtos/getProdutos`
+        `https://pbegalpaodobem.vercel.app/produtos/getProdutos`
       );
 
       if (!response.ok) {
@@ -445,7 +445,7 @@ export default function ProdutoProprietario() {
 
     try {
       const response = await fetch(
-        `http://pbegalpaodobem.vercel.app/produtos/excluirProduto/${id}`,
+        `https://pbegalpaodobem.vercel.app/produtos/excluirProduto/${id}`,
         {
           method: "DELETE",
         }

@@ -190,7 +190,7 @@ export default function Header() {
       }
       try {
         const response = await fetch(
-          `http://pbegalpaodobem.vercel.app/produtos/buscar/?q=${query}`
+          `https://pbegalpaodobem.vercel.app/produtos/buscar/?q=${query}`
         );
         if (!response.ok) {
           throw new Error("Erro ao buscar sugestões.");
@@ -216,7 +216,7 @@ export default function Header() {
     if (query.trim()) {
       try {
         const response = await fetch(
-          `http://pbegalpaodobem.vercel.app/produtos/buscar/?q=${query}`
+          `https://pbegalpaodobem.vercel.app/produtos/buscar/?q=${query}`
         );
         if (!response.ok) {
           throw new Error("Produto não encontrado.");

@@ -70,7 +70,7 @@ useEffect(() => {
     const buscarProduto = async () => {
       try {
         const response = await fetch(
-          `http://pbegalpaodobem.vercel.app/produtos/getProdutoPorId/${id_produto}`
+          `https://pbegalpaodobem.vercel.app/produtos/getProdutoPorId/${id_produto}`
         );
         if (!response.ok) {
           throw new Error("Produto não encontrado.");
@@ -100,7 +100,7 @@ useEffect(() => {
         const emailDoUsuario = JSON.parse(usuarioString);
 
         const resposta = await fetch(
-          `http://pbegalpaodobem.vercel.app/usuarios/getUsuarioPorEmail/${emailDoUsuario}`
+          `https://pbegalpaodobem.vercel.app/usuarios/getUsuarioPorEmail/${emailDoUsuario}`
         );
 
         if (!resposta.ok) {
@@ -130,7 +130,7 @@ useEffect(() => {
     event.preventDefault();
     try {
       const resposta = await fetch(
-        "http://pbegalpaodobem.vercel.app/prioridade/adicionarInteresse",
+        "https://pbegalpaodobem.vercel.app/prioridade/adicionarInteresse",
         {
           method: "POST",
           headers: {

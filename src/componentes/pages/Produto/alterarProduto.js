@@ -18,7 +18,7 @@ const converterParaBase64 = (arquivo) => {
 const atualizarProdutoApi = async (id_produto, dadosProduto) => {
   try {
     const resposta = await fetch(
-      `http://pbegalpaodobem.vercel.app/produtos/atualizaProduto/${id_produto}`,
+      `https://pbegalpaodobem.vercel.app/produtos/atualizaProduto/${id_produto}`,
       {
         method: "PUT",
         headers: {
@@ -43,7 +43,7 @@ const atualizarProdutoApi = async (id_produto, dadosProduto) => {
 const fetchProdutoPorId = async (id) => {
   try {
     const response = await fetch(
-      `http://pbegalpaodobem.vercel.app/produtos/getProdutoPorId/${id}`
+      `https://pbegalpaodobem.vercel.app/produtos/getProdutoPorId/${id}`
     );
 
     if (!response.ok) {
@@ -205,7 +205,7 @@ export default function AlterarProduto() {
     const buscarCategorias = async () => {
       try {
         const response = await fetch(
-          "http://pbegalpaodobem.vercel.app/categorias/getCategorias"
+          "https://pbegalpaodobem.vercel.app/categorias/getCategorias"
         );
         const data = await response.json();
         setCategorias(data);
