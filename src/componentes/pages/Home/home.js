@@ -217,7 +217,7 @@ export default function Home() {
         }
 
         const data = await response.json();
-        alert("data", data);
+
         setProdutosRecentes(data);
       } catch (err) {
         setError(err.message);
@@ -232,7 +232,7 @@ export default function Home() {
   if (loading) {
     return <div>Carregando produto...</div>;
   }
-  alert("error", error);
+
   if (error) {
     return <div>Erro: {error}</div>;
   }
