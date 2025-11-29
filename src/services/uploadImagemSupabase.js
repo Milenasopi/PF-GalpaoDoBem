@@ -18,3 +18,5 @@ async function uploadImagemSupabase(file) {
 
   return urlData.publicUrl;
 }
+
+export default uploadImagemSupabase;
