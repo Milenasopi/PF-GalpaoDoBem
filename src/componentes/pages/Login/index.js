@@ -324,7 +324,8 @@ export default function LoginDaAtiv() {
     setErro("");
 
     const credenciaisCorretas =
-      email === EMAIL_PROPRIETARIO && senha === SENHA_PROPRIETARIO;
+      email.trim() === EMAIL_PROPRIETARIO &&
+      senha.trim() === SENHA_PROPRIETARIO;
 
     alert("1", EMAIL_PROPRIETARIO);
     alert("2", SENHA_PROPRIETARIO);
