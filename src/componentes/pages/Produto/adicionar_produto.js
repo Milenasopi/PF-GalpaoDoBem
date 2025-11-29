@@ -156,7 +156,7 @@ export default function AdicionarProduto() {
   const [nome_produto, setNomeProduto] = useState([]);
   const [preco_produto, setPrecoProduto] = useState([]);
   const [descricao_produto, setDescricaoProduto] = useState([]);
-  const [imagem_produto, setImagemProduto] = useState([]);
+  const [imagem_produto, setImagemProduto] = useState(null);
   const [id_categoria, setIdCategoria] = useState([]);
   const [erro, setErro] = useState("");
   const [loading, setLoading] = useState(false);
