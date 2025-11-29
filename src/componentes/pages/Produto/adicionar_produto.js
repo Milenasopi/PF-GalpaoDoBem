@@ -190,10 +190,10 @@ export default function AdicionarProduto() {
     setErro("");
 
     try {
-      alert("Antes do upload");
+      alert("Antes do upload", imagem_produto);
       // 1 - Upload direto para o Supabase
       const urlImagem = await uploadImagemSupabase(imagem_produto);
-
+      alert("pós upload", urlImagem);
       if (!urlImagem) {
         setErro("Erro ao enviar imagem");
         return;
