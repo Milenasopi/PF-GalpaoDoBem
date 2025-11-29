@@ -4,7 +4,7 @@ async function uploadImagemSupabase(file) {
   const nomeArquivo = `${Date.now()}-${file.name}`;
 
   const { data, error } = await supabase.storage
-    .from("imagens")
+    .from("GalpaoDoBem")
     .upload(nomeArquivo, file);
 
   if (error) {
@@ -13,7 +13,7 @@ async function uploadImagemSupabase(file) {
   }
 
   const { data: urlData } = supabase.storage
-    .from("imagens")
+    .from("GalpaoDoBem")
     .getPublicUrl(nomeArquivo);
 
   return urlData.publicUrl;

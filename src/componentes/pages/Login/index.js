@@ -327,9 +327,6 @@ export default function LoginDaAtiv() {
       email.trim() === EMAIL_PROPRIETARIO &&
       senha.trim() === SENHA_PROPRIETARIO;
 
-    alert("1", EMAIL_PROPRIETARIO);
-    alert("2", SENHA_PROPRIETARIO);
-
     setTimeout(() => {
       if (credenciaisCorretas) {
         navegar("/produtoproprietario");
