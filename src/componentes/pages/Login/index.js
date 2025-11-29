@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Galpao from "../../../img/Galpão.png";
 import "@fontsource/josefin-slab";
-
 import Back from "../../../icons/backIcon.svg";
 
 // acesso sem banco de dados
