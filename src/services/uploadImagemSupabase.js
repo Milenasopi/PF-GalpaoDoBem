@@ -1,6 +1,8 @@
 import { supabase } from "../services/supabaseClient";
 
 async function uploadImagemSupabase(file) {
+  alert('uploadImagemSupabase');
+  alert('file:', file);
   const nomeArquivo = `${Date.now()}-${file.name}`;
 
   const { data, error } = await supabase.storage
@@ -9,6 +11,7 @@ async function uploadImagemSupabase(file) {
 
   if (error) {
     console.error("Erro upload supabase", error);
+    alert('erro',error);
     return null;
   }
 
