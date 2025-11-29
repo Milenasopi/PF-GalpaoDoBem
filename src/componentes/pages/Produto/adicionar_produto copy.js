@@ -183,21 +183,15 @@ export default function AdicionarProduto() {
     buscarCategorias();
   }, []);
 
-  async function executaSubmit(event) {
+  const executaSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
     setErro("");
 
     try {
-      // 1 - Upload direto para o Supabase
-      const urlImagem = await uploadImagemSupabase(imagem_produto);
+      // 1. Converter arquivos para Base64 antes de enviar
+      const imagemBase64 = await converterParaBase64(imagem_produto);
 
-      if (!urlImagem) {
-        setErro("Erro ao enviar imagem");
-        return;
-      }
-
-      // 2 - Enviar apenas o link para o backend
       const resposta = await fetch(
         "https://pbegalpaodobem.vercel.app/produtos/adicionarProduto",
         {
@@ -207,11 +201,11 @@ export default function AdicionarProduto() {
           },
 
           body: JSON.stringify({
-            nome_produto,
-            preco_produto,
-            descricao_produto,
-            imagem_produto: urlImagem, // <-- SOMENTE O LINK
-            id_categoria,
+            nome_produto: nome_produto,
+            preco_produto: preco_produto,
+            descricao_produto: descricao_produto,
+            imagem_produto: imagemBase64,
+            id_categoria: id_categoria,
           }),
         }
       );
@@ -221,15 +215,18 @@ export default function AdicionarProduto() {
       if (resposta.ok) {
         navigate("/produtoproprietario");
       } else {
-        setErro(dados.message || "Erro ao cadastrar produto.");
+        setErro(
+          dados.message ||
+            "Erro ao fazer o cadastro de produto. Tente novamente"
+        );
       }
     } catch (e) {
-      console.log("Falha ao conectar à API", e);
+      console.log("Falha ao conectar a API", erro);
       setErro("Não foi possível conectar ao servidor");
     } finally {
       setLoading(false);
     }
-  }
+  };
 
   return (
     <Container>
