@@ -9,6 +9,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import uploadImagemSupabase from "../../../services/uploadImagemSupabase";
 
 const Container2 = styled.div`
   justify-content: center;
