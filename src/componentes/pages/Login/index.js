@@ -73,7 +73,7 @@
 //   font-size: 20px;
 //   margin-top:10px;
 //   font-weight: bold;
-//   text-decoration: none; 
+//   text-decoration: none;
 //   color: #fff;
 // `;
 
@@ -114,19 +114,17 @@
 //             setErro("E-mail ou senha incorretos. Por favor, tente novamente.");
 //         }
 //         setCarregando(false);
-//     }, 1000); 
+//     }, 1000);
 //   };
 
 //   return (
-    
+
 //     <Container>
 //     <Link to="/" style={{textDecoration: "none"}}>
 //             <BotãoVoltar >
 //                 <Icons src={Back} /><Voltar style={{textDecoration: "none"}}>Voltar</Voltar>
 //             </BotãoVoltar>
 //       </Link>
-
-    
 
 //       <div style={{display:"flex", justifyContent:"center"}}>
 //       <Caixa>
@@ -201,7 +199,7 @@
 //         </Moldura>
 
 //         <Imagem image={Galpao} />
-        
+
 //       </Caixa>
 //       {erro && (
 //         <div className="alert alert-danger fixed-bottom" role="alert">
@@ -328,6 +326,9 @@ export default function LoginDaAtiv() {
     const credenciaisCorretas =
       email === EMAIL_PROPRIETARIO && senha === SENHA_PROPRIETARIO;
 
+    alert("1", EMAIL_PROPRIETARIO);
+    alert("2", SENHA_PROPRIETARIO);
+
     setTimeout(() => {
       if (credenciaisCorretas) {
         navegar("/produtoproprietario");
@@ -356,7 +357,9 @@ export default function LoginDaAtiv() {
             >
               Proprietário?
             </h2>
-            <p style={{ color: "white", textAlign: "center", marginTop: "-6%" }}>
+            <p
+              style={{ color: "white", textAlign: "center", marginTop: "-6%" }}
+            >
               Acesse por aqui
             </p>
 
