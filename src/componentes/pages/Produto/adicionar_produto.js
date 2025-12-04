@@ -166,7 +166,7 @@ export default function AdicionarProduto() {
     const buscarCategorias = async () => {
       try {
         const response = await fetch(
-          "https://pbegalpaodobem.vercel.app/categorias/getCategorias"
+          "http://localhost:3000/categorias/getCategorias"
         );
         if (!response.ok) {
           throw new Error("Falha ao carregar categorias.");
@@ -203,7 +203,7 @@ export default function AdicionarProduto() {
 
       // 2 - Enviar apenas o link para o backend
       const resposta = await fetch(
-        "https://pbegalpaodobem.vercel.app/produtos/adicionarProduto",
+        "http://localhost:3000/produtos/adicionarProduto",
         {
           method: "POST",
           headers: {

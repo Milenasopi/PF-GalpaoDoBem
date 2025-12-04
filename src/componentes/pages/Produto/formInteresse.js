@@ -179,7 +179,7 @@ export default function DemonstrarInteresseProduto() {
     const buscarProduto = async () => {
       try {
         const response = await fetch(
-          `https://pbegalpaodobem.vercel.app/produtos/getProdutoPorId/${id_produto}`
+          `http://localhost:3000/produtos/getProdutoPorId/${id_produto}`
         );
         if (!response.ok) {
           throw new Error("Produto não encontrado.");
@@ -211,7 +211,7 @@ export default function DemonstrarInteresseProduto() {
     setErro("");
 
     try {
-      const resposta = await fetch("https://pbegalpaodobem.vercel.app/usuarios/registrar", {
+      const resposta = await fetch("http://localhost:3000/usuarios/registrar", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

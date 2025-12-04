@@ -129,7 +129,7 @@ export default function TabelaProdutoProprietario() {
       try {
         const responseProduto = await fetch(
           // `http://localhost:3000/produtos/getProdutoPorId/${id_produto}`
-          `https://pbegalpaodobem.vercel.app/produtos/getProdutoPorId/${id_produto}`
+          `http://localhost:3000/produtos/getProdutoPorId/${id_produto}`
         );
         if (!responseProduto.ok) {
           throw new Error("Produto não encontrado.");
@@ -138,7 +138,7 @@ export default function TabelaProdutoProprietario() {
         setProduto(dataProduto);
 
         const responseprioridade = await fetch(
-          `https://pbegalpaodobem.vercel.app/prioridade/getPrioridadePorID/${id_produto}`
+          `http://localhost:3000/prioridade/getPrioridadePorID/${id_produto}`
         );
 
         if (!responseprioridade.ok) {
@@ -183,7 +183,7 @@ export default function TabelaProdutoProprietario() {
 
     try {
       const response = await fetch(
-        `https://pbegalpaodobem.vercel.app/prioridade/deletarInteresse/${prioridade[0].codigo}`,
+        `http://localhost:3000/prioridade/deletarInteresse/${prioridade[0].codigo}`,
         {
           method: "DELETE",
         }
