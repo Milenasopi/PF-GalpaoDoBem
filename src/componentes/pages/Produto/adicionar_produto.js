@@ -190,16 +190,16 @@ export default function AdicionarProduto() {
     setErro("");
 
     try {
-      alert("Antes do upload", imagem_produto);
+      // alert("Antes do upload", imagem_produto);
       // 1 - Upload direto para o Supabase
       const urlImagem = await uploadImagemSupabase(imagem_produto);
-      alert("pós upload", urlImagem);
+      // alert("pós upload", urlImagem);
       if (!urlImagem) {
         setErro("Erro ao enviar imagem");
         return;
       }
 
-      alert("pós upload");
+      // alert("pós upload");
 
       // 2 - Enviar apenas o link para o backend
       const resposta = await fetch(
@@ -219,9 +219,9 @@ export default function AdicionarProduto() {
           }),
         }
       );
-      alert("Pos rota");
+      // alert("Pos rota");
       const dados = await resposta.json();
-      alert("Dados", dados);
+      // alert("Dados", dados);
       if (resposta.ok) {
         navigate("/produtoproprietario");
       } else {
