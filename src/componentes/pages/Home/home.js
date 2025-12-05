@@ -630,7 +630,7 @@ export default function Home() {
           >
             <GalpConfig>
               <div className="text-center p-3">© 2025 SENAI</div>
-              <div className="text-center p-3">GalpãoDoBem</div>
+              <div className="text-center p-3">Com amor: Milena, Maria Isabel, Giovana, Isabela e Clara🤍</div>
             </GalpConfig>
           </div>
         </footer>
