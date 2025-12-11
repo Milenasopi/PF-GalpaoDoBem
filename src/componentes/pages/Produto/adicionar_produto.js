@@ -165,9 +165,8 @@ export default function AdicionarProduto() {
   useEffect(() => {
     const buscarCategorias = async () => {
       try {
-        const response = await fetch(
-          "http://localhost:3000/categorias/getCategorias"
-        );
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+        const response = await fetch(`${API_BASE_URL}/categorias/getCategorias`);
         if (!response.ok) {
           throw new Error("Falha ao carregar categorias.");
         }
@@ -200,10 +199,10 @@ export default function AdicionarProduto() {
       }
 
       // alert("pós upload");
-
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
       // 2 - Enviar apenas o link para o backend
       const resposta = await fetch(
-        "http://localhost:3000/produtos/adicionarProduto",
+        `${API_BASE_URL}/produtos/adicionarProduto`,
         {
           method: "POST",
           headers: {

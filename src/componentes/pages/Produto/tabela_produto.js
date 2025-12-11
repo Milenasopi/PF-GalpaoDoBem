@@ -115,12 +115,13 @@ export default function TabelaProduto() {
   const [dados, setDados] = useState("");
 
   const navigate = useNavigate();
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
   useEffect(() => {
     const buscarProdutoEprioridade = async () => {
       try {
         const responseProduto = await fetch(
-          `http://localhost:3000/produtos/getProdutoPorId/${id_produto}`
+          `${API_BASE_URL}/produtos/getProdutoPorId/${id_produto}`
         );
         if (!responseProduto.ok) {
           throw new Error("Produto não encontrado.");
@@ -129,7 +130,7 @@ export default function TabelaProduto() {
         setProduto(dataProduto);
 
         const responseprioridade = await fetch(
-          `http://localhost:3000/prioridade/getPrioridadePorID/${id_produto}`
+          `${API_BASE_URL}/prioridade/getPrioridadePorID/${id_produto}`
         );
 
         if (!responseprioridade.ok) {

@@ -69,8 +69,9 @@ export default function DemonstrarInteresseProduto() {
 useEffect(() => {
     const buscarProduto = async () => {
       try {
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
         const response = await fetch(
-          `http://localhost:3000/produtos/getProdutoPorId/${id_produto}`
+          `${API_BASE_URL}/produtos/getProdutoPorId/${id_produto}`
         );
         if (!response.ok) {
           throw new Error("Produto não encontrado.");
@@ -99,8 +100,9 @@ useEffect(() => {
 
         const emailDoUsuario = JSON.parse(usuarioString);
 
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
         const resposta = await fetch(
-          `http://localhost:3000/usuarios/getUsuarioPorEmail/${emailDoUsuario}`
+          `${API_BASE_URL}/usuarios/getUsuarioPorEmail/${emailDoUsuario}`
         );
 
         if (!resposta.ok) {
@@ -129,8 +131,9 @@ useEffect(() => {
   const executaSubmit = async (event) => {
     event.preventDefault();
     try {
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
       const resposta = await fetch(
-        "http://localhost:3000/prioridade/adicionarInteresse",
+        `${API_BASE_URL}/prioridade/adicionarInteresse`,
         {
           method: "POST",
           headers: {

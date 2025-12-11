@@ -123,13 +123,13 @@ export default function TabelaProdutoProprietario() {
   const navigate = useNavigate();
 
   // Primeiro useEffect: Buscar o ID do usuário
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
   useEffect(() => {
     const buscarProdutoEprioridade = async () => {
       try {
         const responseProduto = await fetch(
-          // `http://localhost:3000/produtos/getProdutoPorId/${id_produto}`
-          `http://localhost:3000/produtos/getProdutoPorId/${id_produto}`
+          `${API_BASE_URL}/produtos/getProdutoPorId/${id_produto}`
         );
         if (!responseProduto.ok) {
           throw new Error("Produto não encontrado.");
@@ -138,7 +138,7 @@ export default function TabelaProdutoProprietario() {
         setProduto(dataProduto);
 
         const responseprioridade = await fetch(
-          `http://localhost:3000/prioridade/getPrioridadePorID/${id_produto}`
+          `${API_BASE_URL}/prioridade/getPrioridadePorID/${id_produto}`
         );
 
         if (!responseprioridade.ok) {
@@ -183,7 +183,7 @@ export default function TabelaProdutoProprietario() {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/prioridade/deletarInteresse/${prioridade[0].codigo}`,
+        `${API_BASE_URL}/prioridade/deletarInteresse/${prioridade[0].codigo}`,
         {
           method: "DELETE",
         }

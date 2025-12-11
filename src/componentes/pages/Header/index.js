@@ -189,8 +189,9 @@ export default function Header() {
         return;
       }
       try {
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
         const response = await fetch(
-          `http://localhost:3000/produtos/buscar/?q=${query}`
+          `${API_BASE_URL}/produtos/buscar/?q=${query}`
         );
         if (!response.ok) {
           throw new Error("Erro ao buscar sugestões.");
@@ -214,9 +215,10 @@ export default function Header() {
     event.preventDefault();
 
     if (query.trim()) {
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
       try {
         const response = await fetch(
-          `http://localhost:3000/produtos/buscar/?q=${query}`
+          `${API_BASE_URL}/produtos/buscar/?q=${query}`
         );
         if (!response.ok) {
           throw new Error("Produto não encontrado.");

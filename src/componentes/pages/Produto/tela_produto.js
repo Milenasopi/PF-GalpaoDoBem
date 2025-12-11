@@ -165,12 +165,13 @@ export default function TelaProduto() {
 
   const [usuario, setUsuario] = useState([]);
   const { id } = useParams();
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
   useEffect(() => {
     const buscarProduto = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/produtos/getProdutoPorId/${id_produto}`
+          `${API_BASE_URL}/produtos/getProdutoPorId/${id_produto}`
         );
         if (!response.ok) {
           throw new Error("Produto não encontrado.");

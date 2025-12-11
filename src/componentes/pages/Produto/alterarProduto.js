@@ -14,11 +14,11 @@ const converterParaBase64 = (arquivo) => {
     leitor.onerror = (erro) => rejeitar(erro);
   });
 };
-
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 const atualizarProdutoApi = async (id_produto, dadosProduto) => {
   try {
     const resposta = await fetch(
-      `http://localhost:3000/produtos/atualizaProduto/${id_produto}`,
+      `${API_BASE_URL}/produtos/atualizaProduto/${id_produto}`,
       {
         method: "PUT",
         headers: {
@@ -39,11 +39,10 @@ const atualizarProdutoApi = async (id_produto, dadosProduto) => {
     throw erro;
   }
 };
-
 const fetchProdutoPorId = async (id) => {
   try {
     const response = await fetch(
-      `http://localhost:3000/produtos/getProdutoPorId/${id}`
+      `${API_BASE_URL}/produtos/getProdutoPorId/${id}`
     );
 
     if (!response.ok) {
@@ -202,10 +201,11 @@ export default function AlterarProduto() {
   const [previewUrl, setPreviewUrl] = useState("");
 
   useEffect(() => {
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
     const buscarCategorias = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3000/categorias/getCategorias"
+          `${API_BASE_URL}/categorias/getCategorias`
         );
         const data = await response.json();
         setCategorias(data);

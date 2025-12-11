@@ -209,8 +209,9 @@ export default function Home() {
   useEffect(() => {
     const buscarProdutoRecente = async () => {
       try {
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
         const response = await fetch(
-          `http://localhost:3000/produtos/getProdutosRecentes`
+          `${API_BASE_URL}/produtos/getProdutosRecentes`
         );
         if (!response.ok) {
           throw new Error("Produto não encontrado.");

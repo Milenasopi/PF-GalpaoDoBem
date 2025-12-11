@@ -175,11 +175,12 @@ export default function DemonstrarInteresseProduto() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
   useEffect(() => {
     const buscarProduto = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/produtos/getProdutoPorId/${id_produto}`
+          `${API_BASE_URL}/produtos/getProdutoPorId/${id_produto}`
         );
         if (!response.ok) {
           throw new Error("Produto não encontrado.");
@@ -211,7 +212,7 @@ export default function DemonstrarInteresseProduto() {
     setErro("");
 
     try {
-      const resposta = await fetch("http://localhost:3000/usuarios/registrar", {
+      const resposta = await fetch(`${API_BASE_URL}/usuarios/registrar`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

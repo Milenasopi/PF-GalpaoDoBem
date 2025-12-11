@@ -139,10 +139,11 @@ export default function Categoria() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
     const buscarNomeDaCategoria = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/categorias/getCategoriaPorId/${id_categoria}`
+          `${API_BASE_URL}/categorias/getCategoriaPorId/${id_categoria}`
         );
 
         if (!response.ok) {
@@ -160,9 +161,10 @@ export default function Categoria() {
     };
 
     const buscarProdutosDaCategoria = async () => {
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
       try {
         const response = await fetch(
-          `http://localhost:3000/produtos/getProdutoPorCategoria/${id_categoria}`
+          `${API_BASE_URL}/produtos/getProdutoPorCategoria/${id_categoria}`
         );
 
         if (!response.ok) {

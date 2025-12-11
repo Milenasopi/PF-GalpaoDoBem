@@ -340,6 +340,7 @@ export default function ProdutoProprietario() {
       setQuery(e.target.value);
     };
   
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
     useEffect(() => {
       const buscarSugestoes = async () => {
         if (query.trim() === "") {
@@ -348,7 +349,7 @@ export default function ProdutoProprietario() {
         }
         try {
           const response = await fetch(
-            `http://localhost:3000/produtos/buscar/?q=${query}`
+            `${API_BASE_URL}/produtos/buscar/?q=${query}`
           );
           if (!response.ok) {
             throw new Error("Erro ao buscar sugestões.");
@@ -374,7 +375,7 @@ export default function ProdutoProprietario() {
       if (query.trim()) {
         try {
           const response = await fetch(
-            `http://localhost:3000/produtos/buscar/?q=${query}`
+            `${API_BASE_URL}/produtos/buscar/?q=${query}`
           );
           if (!response.ok) {
             throw new Error("Produto não encontrado.");
@@ -404,7 +405,7 @@ export default function ProdutoProprietario() {
   const buscarProdutosDoProprietario = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/produtos/getProdutos`
+        `${API_BASE_URL}/produtos/getProdutos`
       );
 
       if (!response.ok) {
@@ -445,7 +446,7 @@ export default function ProdutoProprietario() {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/produtos/excluirProduto/${id}`,
+        `${API_BASE_URL}/produtos/excluirProduto/${id}`,
         {
           method: "DELETE",
         }
